@@ -4,6 +4,7 @@ import { TestNavButton } from "./Button";
 //types
 interface Props {
   questions: Question[];
+  setPageState: (arg0: number) => void;
 }
 
 export interface Option {
@@ -17,7 +18,8 @@ export interface Question {
   options: Option[];
 }
 
-const DynamicTestComponent = ({ questions }: Props) => {
+
+const DynamicTestComponent = ({ questions, setPageState }: Props) => {
   //state
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = questions[currentQuestionIndex];
@@ -44,6 +46,7 @@ const DynamicTestComponent = ({ questions }: Props) => {
   };
 
   const handlePreviousQuestion = () => {
+    if (currentQuestionIndex === 0) setPageState(0)
     setCurrentQuestionIndex((prevIndex) => prevIndex - 1);
   };
 
