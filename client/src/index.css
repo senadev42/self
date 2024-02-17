@@ -6,3 +6,18 @@
 .herosection {
   background-image: url('/assets/heroimage.jpg');
 }
+
+
+@keyframes bearhueshift {
+  0% {
+    filter: hue-rotate(0deg);
+  }
+  100% {
+    filter: hue-rotate(360deg);
+  }
+}
+
+
+.bears {
+  animation: bearhueshift 5s infinite alternate;
+}
