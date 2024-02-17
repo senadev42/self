@@ -97,6 +97,7 @@ const DynamicTestComponent = ({ questions, setPageState }: Props) => {
             currentQuestionIndex === questions.length - 1 ? "Finish" : "Next"
           }
           onClick={handleNextQuestion}
+          disabled={userAnswers[currentQuestionIndex] == null}
         />
       </div>
     </div>
