@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { TestNavButton } from "./Button";
 
 //types
 interface Props {
@@ -83,39 +84,17 @@ const DynamicTestComponent = ({ questions }: Props) => {
       </div>
 
       {/* Navigation */}
-      <div className="flex flex-row justify-between gap-x-6 ">
-      {currentQuestionIndex == 0 && (
-          <button
-            className=" border-blueish-100  border-b-4 px-4 py-2 rounded hover:bg-blueish-100 mt-4"
-            onClick={handlePreviousQuestion}
-          >
-            Return
-          </button>
-        )}
-        {currentQuestionIndex > 0 && (
-          <button
-            className=" border-blueish-100  border-b-4 px-4 py-2 rounded hover:bg-blueish-100 mt-4"
-            onClick={handlePreviousQuestion}
-          >
-            Previous
-          </button>
-        )}
-        {currentQuestionIndex < questions.length - 1 && (
-          <button
-            className=" border-blueish-100 border-b-4 px-4 py-2 rounded hover:bg-blueish-100 mt-4"
-            onClick={handleNextQuestion}
-          >
-            Next
-          </button>
-        )}
-        {currentQuestionIndex == questions.length - 1 && (
-          <button
-            className=" border-blueish-100 border-b-4 px-4 py-2 rounded hover:bg-blueish-100 mt-4"
-            onClick={handleNextQuestion}
-          >
-            Finish
-          </button>
-        )}
+      <div className="flex flex-row justify-between gap-x-6">
+        <TestNavButton
+          label={currentQuestionIndex === 0 ? "Return" : "Previous"}
+          onClick={handlePreviousQuestion}
+        />
+        <TestNavButton
+          label={
+            currentQuestionIndex === questions.length - 1 ? "Finish" : "Next"
+          }
+          onClick={handleNextQuestion}
+        />
       </div>
     </div>
   );
