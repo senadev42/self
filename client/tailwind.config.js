@@ -7,10 +7,11 @@ export default {
   theme: {
     colors: {
       cream: '#fff8f0',
-      pink: '#fedcd3',
+      pink: '#F8B3B3',
       blueish: {
-        50: '#e9e6f7',
-        100: '#c7d8fa',
+        50: '#d8efec',
+        100: '#A2D7D1',
+        150: '#59A8A4',
         200: '#203152'
       },
     },
