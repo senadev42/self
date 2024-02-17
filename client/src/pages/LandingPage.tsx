@@ -4,7 +4,7 @@ const LandingPage = () => {
       {/* Call to Action Hero Section */}
       <div className="herosection bg-cover bg-center">
         {/* Hero Copy Text */}
-        <div className="flex flex-col items-center mx-auto md:w-1/2  text-blueish-200  font-extralight pb-2">
+        <div className="flex flex-col items-center mx-auto md:w-1/2  text-blueish-200  font-extralight pb-2 ">
           <h1 className="text-3xl flex flex-col items-center mt-2 pt-6 mb-2">
             <em>Discover Your True{" "}</em>
             <span className="text-8xl mt-4 font-serif">Self</span>
@@ -13,9 +13,9 @@ const LandingPage = () => {
             Are you an introvert? an extrovert? {" "}
             <em>something in between?</em> Does it even matter? Take the test and find out.
           </p>
-          <button className="border-blueish-100 bg-blueish-100 border-2 text-lg px-6 py-4 rounded-md mb-5 hover:bg-cream hover:border-cream font-mono">
+          <a href="/starttest" className="border-blueish-100 bg-blueish-100 border-2 text-lg px-6 py-4 rounded-md mb-5 hover:bg-cream hover:border-cream font-mono">
             Take the Test!
-          </button>
+          </a>
         </div>
       </div>
       {/* Some info: hero section */}
