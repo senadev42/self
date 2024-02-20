@@ -7,6 +7,9 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Question } from './personalitytest/entities/question.entity';
 import { Answer } from './personalitytest/entities/answer.entity';
 
+//Modules
+import { PersonalitytestModule } from './personalitytest/personalitytest.module';
+
 @Module({
   imports: [
     TypeOrmModule.forRoot({
@@ -16,7 +19,7 @@ import { Answer } from './personalitytest/entities/answer.entity';
       synchronize: true,
       logging: true
     }),
-    TypeOrmModule.forFeature([Question, Answer]),
+    PersonalitytestModule
   ],
   controllers: [AppController],
   providers: [AppService],
