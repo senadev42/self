@@ -8,6 +8,8 @@ async function bootstrap() {
   // Set up global validation pipe
   app.useGlobalPipes(new ValidationPipe({ transform: true }));
 
+  app.setGlobalPrefix('api/v1');
+
   await app.listen(3000);
 }
 bootstrap();

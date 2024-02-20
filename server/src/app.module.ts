@@ -9,16 +9,11 @@ import { Answer } from './personalitytest/entities/answer.entity';
 
 //Modules
 import { PersonalitytestModule } from './personalitytest/personalitytest.module';
+import { TypeORMSQLiteRootModule } from './utils/typeorm.sqlite.setup';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot({
-      type: 'sqlite',
-      database: 'db/personality_test.db',
-      entities: [Question, Answer],
-      synchronize: true,
-      logging: true
-    }),
+    ...TypeORMSQLiteRootModule(),
     PersonalitytestModule
   ],
   controllers: [AppController],

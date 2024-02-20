@@ -6,7 +6,7 @@ import { Answer } from './entities/answer.entity';
 import { CreateQuestionDto } from './dtos/create-question.dto';
 
 @Controller()
-export class PersonalitytestController {
+export class PersonalitytestController { 
   constructor(
     private readonly personalityTestService: PersonalitytestService,
   ) {}

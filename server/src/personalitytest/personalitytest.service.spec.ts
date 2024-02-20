@@ -4,21 +4,14 @@ import { PersonalitytestService } from './personalitytest.service';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { Answer } from './entities/answer.entity';
 import { Question } from './entities/question.entity';
+import { PersonalityTestSQLModule } from '../utils/typeorm.sqlite.setup';
 
 describe('PersonalitytestService', () => {
   let service: PersonalitytestService;
 
   beforeEach(async () => {
     const module: TestingModule = await Test.createTestingModule({
-      imports: [
-        TypeOrmModule.forRoot({
-          type: 'sqlite',
-          database: 'db/personality_test.db',
-          entities: [Question, Answer],
-          synchronize: true,
-        }),
-        TypeOrmModule.forFeature([Question, Answer]),
-      ],
+      imports: [...PersonalityTestSQLModule()],
       providers: [PersonalitytestService],
     }).compile();
 
