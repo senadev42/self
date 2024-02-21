@@ -2,9 +2,19 @@ import { useState } from "react";
 import DynamicTestComponent from "../components/DynamicTestComponent";
 import StartTestComponent from "../components/StartTestComponent";
 
-import questions from "../MOCKS/questions.json";
+import { useQuery } from 'react-query';
+
+const fetchQuestions = async () => {
+  const response = await fetch('http://localhost:3000/api/v1/questions');
+  if (!response.ok) {
+    throw new Error('Failed to fetch questions');
+  }
+  return response.json();
+};
 
 const StartTestPage = () => {
+  const { data: questions, isLoading, isError } = useQuery('questions', fetchQuestions);
+
   const [pageState, setPageState] = useState(0);
 
   return (
@@ -14,10 +24,13 @@ const StartTestPage = () => {
         {pageState === 0 ? (
           <StartTestComponent setPageState={setPageState} />
         ) : (
-          <DynamicTestComponent
-            questions={questions}
-            setPageState={setPageState}
-          />
+          isLoading ? (
+            <p>Loading...</p>
+          ) : isError ? (
+            <p>Error fetching questions</p>
+          ) : (
+            <DynamicTestComponent questions={questions} setPageState={setPageState} />
+          )
         )}
       </div>
     </div>

@@ -9,6 +9,7 @@ interface Props {
 }
 
 export interface Option {
+  id: number;
   label: string;
   points: number;
 }
@@ -64,15 +65,14 @@ const DynamicTestComponent = ({ questions, setPageState }: Props) => {
       </h2>
 
       {/* The Options */}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4">
-        {currentQuestion.options.map((option, index) => {
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-x-4 gap-y-2">
+        {currentQuestion.options.map((option) => {
           const isSelected =
             userAnswers[currentQuestionIndex]?.label === option.label;
-
           return (
             <OptionButton
               isSelected={isSelected}
-              index={index}
+              key={option.id}
               handleOptionSelect={handleOptionSelect}
               option={option}
             />
