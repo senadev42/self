@@ -22,10 +22,26 @@ export class PersonalitytestService {
 
     // Create the question
     const newQuestion = this.questionRepository.create({ question });
-
-    console.log(newQuestion);
-
-    return await this.questionRepository.save(newQuestion);
+    await this.questionRepository.save(newQuestion);
+  
+    // Create options for the question
+    const newOptions = options.map((option) => {
+      return this.answerRepository.create({
+        question: newQuestion,
+        optionLabel: option.label,
+        points: option.points,
+      });
+    });
+  
+    // Save options and wait for all save operations to complete
+    const savedOptions = await Promise.all(newOptions.map(async (option) => {
+      return await this.answerRepository.save(option);
+    }));
+  
+    // Return the assembled question object with saved options
+    return { ...newQuestion, options: savedOptions.map(option => {
+      return { id: option.id, label: option.optionLabel, points: option.points }; 
+    }) };
   }
 
   getAllQuestions() {
