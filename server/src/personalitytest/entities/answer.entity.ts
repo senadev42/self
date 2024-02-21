@@ -7,9 +7,6 @@ export class Answer {
   @PrimaryGeneratedColumn()
   id: number;
 
-  @Column()
-  userId: number;
-
   @ManyToOne(() => Question, question => question.answers)
   question: Question;
 
