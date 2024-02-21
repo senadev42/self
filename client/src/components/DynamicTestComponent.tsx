@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { TestNavButton } from "./TestNavButton";
+import { OptionButton } from "./OptionButton";
 
 //types
 interface Props {
@@ -46,7 +47,7 @@ const DynamicTestComponent = ({ questions, setPageState }: Props) => {
   };
 
   const handlePreviousQuestion = () => {
-    if (currentQuestionIndex === 0) setPageState(0)
+    if (currentQuestionIndex === 0) setPageState(0);
     setCurrentQuestionIndex((prevIndex) => prevIndex - 1);
   };
 
@@ -69,19 +70,12 @@ const DynamicTestComponent = ({ questions, setPageState }: Props) => {
             userAnswers[currentQuestionIndex]?.label === option.label;
 
           return (
-            <div
-              className={`mb-2 ${
-                isSelected ? "bg-pink" : "bg-blueish-100"
-              } hover:bg-blueish-50 rounded-md`}
-              key={index}
-            >
-              <button
-                className=" text-white px-4 py-2 rounded hover:bg-blue-600 mr-2 w-full "
-                onClick={() => handleOptionSelect(option)}
-              >
-                {option.label}
-              </button>
-            </div>
+            <OptionButton
+              isSelected={isSelected}
+              index={index}
+              handleOptionSelect={handleOptionSelect}
+              option={option}
+            />
           );
         })}
       </div>
