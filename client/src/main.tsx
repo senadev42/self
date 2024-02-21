@@ -4,11 +4,17 @@ import App from "./App.tsx";
 import "./index.css";
 import Navbar from "./components/Navbar.tsx";
 
+import { QueryClient, QueryClientProvider } from "react-query";
+
+const queryClient = new QueryClient();
+
 ReactDOM.createRoot(document.getElementById("root")!).render(
-  <React.StrictMode>
-    <div className="lg:h-screen lg:overflow-hidden">
-      <Navbar />
-      <App />
-    </div>
-  </React.StrictMode>
+  <QueryClientProvider client={queryClient}>
+    <React.StrictMode>
+      <div className="lg:h-screen lg:overflow-hidden">
+        <Navbar />
+        <App />
+      </div>
+    </React.StrictMode>
+  </QueryClientProvider>
 );
