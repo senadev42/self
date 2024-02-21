@@ -44,14 +44,22 @@ export class PersonalitytestService {
     }) };
   }
 
-  getAllQuestions() {
+  async getAllQuestions() {
+    // Find all questions with their associated answers
+    const questionsWithAnswers = await this.questionRepository
+      .createQueryBuilder('question')
+      .leftJoinAndSelect('question.answers', 'answer')
+      .getMany();
 
-    //get all questions
-
-    const questions = this.questionRepository.find();
-
-
-
-    return questions;
+    // Return the assembled data in the intended body type
+    return questionsWithAnswers.map((question) => ({
+      id: question.id,
+      question: question.question,
+      options: question.answers.map((answer) => ({
+        id: answer.id,
+        label: answer.optionLabel,
+        points: answer.points,
+      })),
+    }));
   }
 }
