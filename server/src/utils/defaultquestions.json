@@ -1,0 +1,65 @@
+[
+    {
+        "question": "When faced with a social event, what's your initial reaction?",
+        "options": [
+            {
+                "label": "Excited and eager to meet new people",
+                "points": 4
+            },
+            {
+                "label": "Interested, but cautious about interacting",
+                "points": 3
+            },
+            {
+                "label": "Prefer staying on the sidelines, observing",
+                "points": 2
+            },
+            {
+                "label": "Feel overwhelmed and prefer to avoid the event",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "How do you typically recharge after a busy day?",
+        "options": [
+            {
+                "label": "Spending time with friends or attending social events",
+                "points": 4
+            },
+            {
+                "label": "Engaging in activities alone or with a small group",
+                "points": 3
+            },
+            {
+                "label": "Relaxing at home with a book or movie",
+                "points": 2
+            },
+            {
+                "label": "Retreating to a quiet space to decompress",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "Which statement best describes your approach to meeting new people?",
+        "options": [
+            {
+                "label": "Quickly initiate conversations and enjoy meeting new faces",
+                "points": 4
+            },
+            {
+                "label": "Open to meeting new people, but prefer others to initiate",
+                "points": 3
+            },
+            {
+                "label": "Prefer to stick with familiar faces and avoid meeting new people",
+                "points": 2
+            },
+            {
+                "label": "Feel anxious about meeting new people and tend to avoid social interactions",
+                "points": 1
+            }
+        ]
+    }
+]
