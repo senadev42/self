@@ -61,5 +61,236 @@
                 "points": 1
             }
         ]
+    },
+    {
+        "question": "When faced with a group activity, how do you usually feel?",
+        "options": [
+            {
+                "label": "Thrilled and ready to engage with everyone",
+                "points": 4
+            },
+            {
+                "label": "Interested, but prefer smaller group interactions",
+                "points": 3
+            },
+            {
+                "label": "Comfortable participating, but enjoy observing more",
+                "points": 2
+            },
+            {
+                "label": "Feel anxious and tend to withdraw from group activities",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "How do you typically unwind after a busy week?",
+        "options": [
+            {
+                "label": "Attending lively events or parties",
+                "points": 4
+            },
+            {
+                "label": "Spending time with a few close friends or family members",
+                "points": 3
+            },
+            {
+                "label": "Enjoying solitary activities like hiking or painting",
+                "points": 2
+            },
+            {
+                "label": "Seeking solitude to recharge away from social settings",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "Which scenario sounds more appealing to you?",
+        "options": [
+            {
+                "label": "A bustling city street filled with people and activities",
+                "points": 4
+            },
+            {
+                "label": "A cozy cafe with a few friends or acquaintances",
+                "points": 3
+            },
+            {
+                "label": "A quiet countryside retreat with minimal human interaction",
+                "points": 2
+            },
+            {
+                "label": "A secluded spot where you can be alone and away from crowds",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "When meeting someone new, what's your initial reaction?",
+        "options": [
+            {
+                "label": "Excited to engage in conversation and get to know them",
+                "points": 4
+            },
+            {
+                "label": "Open to meeting them, but prefer a gradual interaction",
+                "points": 3
+            },
+            {
+                "label": "Prefer sticking with familiar faces over meeting new people",
+                "points": 2
+            },
+            {
+                "label": "Feel hesitant and apprehensive about initiating contact",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "How do you usually feel in a crowded, noisy environment?",
+        "options": [
+            {
+                "label": "Energized and excited by the atmosphere",
+                "points": 4
+            },
+            {
+                "label": "Engaged but also seek quieter moments within the chaos",
+                "points": 3
+            },
+            {
+                "label": "Tolerant but feel the need to withdraw after a while",
+                "points": 2
+            },
+            {
+                "label": "Overwhelmed and uncomfortable, preferring to leave",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "Which activity would you choose for a weekend outing?",
+        "options": [
+            {
+                "label": "Attending a music festival or large social gathering",
+                "points": 4
+            },
+            {
+                "label": "Going on a hike or nature walk with a small group",
+                "points": 3
+            },
+            {
+                "label": "Visiting a museum or gallery with one or two friends",
+                "points": 2
+            },
+            {
+                "label": "Spending quiet time alone in a serene setting",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "How do you typically respond to an invitation to a party or social event?",
+        "options": [
+            {
+                "label": "Immediately accept and look forward to the gathering",
+                "points": 4
+            },
+            {
+                "label": "Accept with some reservation, depending on the crowd",
+                "points": 3
+            },
+            {
+                "label": "Tentatively accept, but consider backing out last minute",
+                "points": 2
+            },
+            {
+                "label": "Decline, preferring to avoid large social gatherings",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "In group discussions, how comfortable are you with speaking up?",
+        "options": [
+            {
+                "label": "Very comfortable, often taking the lead in discussions",
+                "points": 4
+            },
+            {
+                "label": "Comfortable, but prefer to contribute when necessary",
+                "points": 3
+            },
+            {
+                "label": "Somewhat hesitant, usually waiting for others to speak first",
+                "points": 2
+            },
+            {
+                "label": "Very hesitant, often avoiding speaking in groups",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "When you're feeling down, what do you usually prefer?",
+        "options": [
+            {
+                "label": "Being around friends or loved ones to cheer you up",
+                "points": 4
+            },
+            {
+                "label": "Engaging in activities that distract or uplift you",
+                "points": 3
+            },
+            {
+                "label": "Seeking solace in quiet reflection or meditation",
+                "points": 2
+            },
+            {
+                "label": "Retreating from social interactions until you feel better",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "When planning a trip, what kind of accommodation do you prefer?",
+        "options": [
+            {
+                "label": "A vibrant hostel or shared accommodation",
+                "points": 4
+            },
+            {
+                "label": "A cozy bed and breakfast with a few other guests",
+                "points": 3
+            },
+            {
+                "label": "A private rental or hotel room for personal space",
+                "points": 2
+            },
+            {
+                "label": "A remote cabin or retreat away from others",
+                "points": 1
+            }
+        ]
+    },
+    {
+        "question": "How do you feel about attending networking events?",
+        "options": [
+            {
+                "label": "Excited to meet new people and make connections",
+                "points": 4
+            },
+            {
+                "label": "Open to networking but prefer smaller, more intimate gatherings",
+                "points": 3
+            },
+            {
+                "label": "Reluctant, but attend if necessary for professional reasons",
+                "points": 2
+            },
+            {
+                "label": "Avoid them whenever possible, feeling uncomfortable in such settings",
+                "points": 1
+            }
+        ]
     }
 ]

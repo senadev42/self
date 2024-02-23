@@ -51,8 +51,11 @@ export class PersonalitytestService {
       .leftJoinAndSelect('question.answers', 'answer')
       .getMany();
 
+    //five questions at random
+    const randomQuestions = questionsWithAnswers.sort(() => 0.5 - Math.random()).slice(0, 5);
+ 
     // Return the assembled data in the intended body type
-    return questionsWithAnswers.map((question) => ({
+    return randomQuestions.map((question) => ({
       id: question.id,
       question: question.question,
       options: question.answers.map((answer) => ({
