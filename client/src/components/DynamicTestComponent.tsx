@@ -72,7 +72,7 @@ const DynamicTestComponent = ({ questions, setPageState, setScore }: Props) => {
   const lastFourWords = questionWords.slice(-4).join(" ");
 
   //for progress bar
-  const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
+  const progressPercentage = ((currentQuestionIndex) / questions.length) * 100;
 
   return (
     <div className="">
