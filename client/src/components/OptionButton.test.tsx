@@ -5,14 +5,14 @@ import { OptionButton } from "./OptionButton";
 
 
 describe("The option button on a question", () => {
-  const mockOption = { label: "Test Option", points: 3 };
+  const mockOption = { id: 1, label: "Test Option", points: 3 };
   const mockHandleOptionSelect = vi.fn();
 
   it("is pink if selected", () => {
     render(
       <OptionButton
         isSelected={true}
-        index={0}
+        key={0}
         handleOptionSelect={mockHandleOptionSelect}
         option={mockOption}
       />
@@ -26,7 +26,7 @@ describe("The option button on a question", () => {
     render(
       <OptionButton
         isSelected={false}
-        index={0}
+        key={0}
         handleOptionSelect={mockHandleOptionSelect}
         option={mockOption}
       />
