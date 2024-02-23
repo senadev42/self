@@ -9,14 +9,13 @@ export const StartTestComponent = ({setPageState}: startpageProps) => {
   return (
     <>
       {/* intro */}
-      <div className="text-justify">
-        <p className="text-lg">
-          This test consists of 3-5 thought-provoking questions crafted to
-          unravel the intricacies of your inner psyche.
+      <div className="text-justify text-base space-y-2">
+        <p >
+          This test consists of 5 questions each with 4 options. Each question has a weight and this is used to place you on a spectrum of extroversion.
         </p>
-        <p className="text-lg mt-2">
+        <p >
           {" "}
-          There's no right or wrong answers just pick whatever you resonate
+          No right or wrong answers just pick whatever you resonate
           with.
         </p>
         <p className="text-lg"></p>
