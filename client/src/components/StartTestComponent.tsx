@@ -1,3 +1,5 @@
+import { PAGESTATES } from "../pages/TestPage";
+
 interface startpageProps {
   setPageState: (arg0: number) => void;
 }
@@ -22,7 +24,7 @@ export const StartTestComponent = ({setPageState}: startpageProps) => {
 
       {/* bullet points */}
       <div>
-        <button className="mt-8 bg-pink text-white font-bold py-2 px-4 rounded" onClick={()=> {setPageState(1)}}>
+        <button className="mt-8 bg-pink text-white font-bold py-2 px-4 rounded" onClick={()=> {setPageState(PAGESTATES.intest)}}>
           Begin Test
         </button>
         <ul className="mt-6 list-disc pl-4">

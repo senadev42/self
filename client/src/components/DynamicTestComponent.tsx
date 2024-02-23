@@ -1,11 +1,13 @@
 import { useState } from "react";
 import { TestNavButton } from "./TestNavButton";
 import { OptionButton } from "./OptionButton";
+import { PAGESTATES, Score } from "../pages/TestPage";
 
 //types
 interface Props {
   questions: Question[];
   setPageState: (arg0: number) => void;
+  setScore: Function;
 }
 
 export interface Option {
@@ -21,7 +23,7 @@ export interface Question {
 }
 
 
-const DynamicTestComponent = ({ questions, setPageState }: Props) => {
+const DynamicTestComponent = ({ questions, setPageState, setScore }: Props) => {
   //state
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const currentQuestion = questions[currentQuestionIndex];
@@ -43,6 +45,19 @@ const DynamicTestComponent = ({ questions, setPageState }: Props) => {
   const handleNextQuestion = () => {
     if (currentQuestionIndex < questions.length - 1) {
       setCurrentQuestionIndex((prevIndex) => prevIndex + 1);
+    } else {
+
+      //if finished
+      console.log("finished");
+
+      //calculate score and pass it on upwards
+      const totalPoints = userAnswers.reduce((acc, val) => {
+        return acc + (val?.points ?? 0);
+      }, 0);
+
+      setScore(totalPoints);
+
+      setPageState(PAGESTATES.results)
     }
     console.log(userAnswers);
   };
@@ -55,6 +70,9 @@ const DynamicTestComponent = ({ questions, setPageState }: Props) => {
   // highlight handlers, kind of arbitrary though will have to control input
   const questionWords = currentQuestion.question.split(" ");
   const lastFourWords = questionWords.slice(-4).join(" ");
+
+  //for progress bar
+  const progressPercentage = ((currentQuestionIndex + 1) / questions.length) * 100;
 
   return (
     <div className="">
@@ -86,6 +104,15 @@ const DynamicTestComponent = ({ questions, setPageState }: Props) => {
           buttonlabel={currentQuestionIndex === 0 ? "Return" : "Previous"}
           onClick={handlePreviousQuestion}
         />
+        {/* question # out of total questions */}
+        <div className="mt-10 w-full mx-4 lg:mx-20">
+      <div className="relative w-full h-2 bg-pink rounded-full mt-2">
+        <div
+          className="absolute top-0 left-0 bg-blueish-200 h-2 rounded-full"
+          style={{ width: `${progressPercentage}%` }}
+        ></div>
+      </div>
+    </div>
         <TestNavButton
           buttonlabel={
             currentQuestionIndex === questions.length - 1 ? "Finish" : "Next"
